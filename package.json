@@ -1,0 +1,36 @@
+{
+  "name": "match-country-german",
+  "description": "Try to match given german country name with its ISO code.",
+  "version": "0.1.0",
+  "keywords": [
+    "german",
+    "country",
+    "name",
+    "iso",
+    "code",
+    "match",
+    "search"
+  ],
+  "author": "Julius Tens <mail@juliustens.de>",
+  "homepage": "https://github.com/juliuste/match-country-german",
+  "repository": "juliuste/match-country-german",
+  "bugs": "https://github.com/juliuste/match-country-german/issues",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "countries.json"
+  ],
+  "dependencies": {
+    "fast-levenshtein": "^2.0.5",
+    "slug": "^0.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js",
+    "prepublish": "npm test"
+  },
+  "engine": {
+    "node": ">=4"
+  },
+  "license": "MIT"
+}
