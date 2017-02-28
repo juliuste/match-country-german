@@ -1,7 +1,7 @@
 {
   "name": "match-country-german",
   "description": "Try to match given german country name with its ISO code.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "keywords": [
     "german",
     "country",
