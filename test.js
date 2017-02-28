@@ -1,13 +1,16 @@
 'use strict'
 
-const assert = require('assert')
+const tape = require('tape')
 const match = require('./index.js')
 
-assert(match('Deutschland')==='de')
-assert(match('USA')==='us')
-assert(match('Vereinigte Staaten von Amerika')==='us')
-assert(match('Russland')==='ru')
-assert(match('Frankreich')==='fr')
-assert(match('Test')===null)
-assert(match('England')==='uk')
-assert(match('Großbrltannein')===null)
+tape('match-country-german', (t) => {
+	t.plan(8)
+	t.true(match('Deutschland')==='DE')
+	t.true(match('USA')==='US')
+	t.true(match('Vereinigte Staaten von Amerika')==='US')
+	t.true(match('Russland')==='RU')
+	t.true(match('Frankreich')==='FR')
+	t.true(match('Test')===null)
+	t.true(match('England')==='GB')
+	t.true(match('Großbrltannein')===null)
+})

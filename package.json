@@ -24,7 +24,9 @@
     "fast-levenshtein": "^2.0.5",
     "slug": "^0.9.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "^4.6.3"
+  },
   "scripts": {
     "test": "node test.js",
     "prepublish": "npm test"
