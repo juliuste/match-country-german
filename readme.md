@@ -1,6 +1,6 @@
 # match-country-german
 
-Try to match given german country name with its ISO code.
+Try to match given german country name with its [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) code.
 
 [![npm version](https://img.shields.io/npm/v/match-country-german.svg)](https://www.npmjs.com/package/match-country-german)
 [![Build Status](https://travis-ci.org/juliuste/match-country-german.svg?branch=master)](https://travis-ci.org/juliuste/match-country-german)
@@ -13,8 +13,8 @@ Try to match given german country name with its ISO code.
 ```javascript
 const match = require('match-country-german')
 
-let iso = match('Deutschland') // 'de'
-	iso = match('Vereinigte Staaten von Amerika') // 'us'
+let iso = match('Deutschland') // 'DE'
+	iso = match('Vereinigte Staaten von Amerika') // 'US'
 	iso = match('Großbrltannein') // null
 
 ```

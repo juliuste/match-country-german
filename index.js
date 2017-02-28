@@ -8,7 +8,7 @@ const equals = (one, two) => (levenshtein(slug(one, ''), slug(two, '')) == 0) //
 
 const match = (name) => {
 	for(let country in countries){
-		if(equals(country, name)) return countries[country].toLowerCase()
+		if(equals(country, name)) return countries[country]
 	}
 	return null
 }
