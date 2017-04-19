@@ -17,9 +17,9 @@ tape('exact matches', (t) => {
 	t.plan(6)
 	t.equal(match('Deutschland'), 'DE')
 	t.equal(match('USA'), 'US')
-	t.equal(match('Vereinigte Staaten von Amerika'), 'US')
+	t.equal(match('vereinigte staaten von amerika'), 'US')
 	t.equal(match('Russland'), 'RU')
-	t.equal(match('Frankreich'), 'FR')
+	t.equal(match('frANKreich'), 'FR')
 	t.equal(match('England'), 'GB')
 })
 

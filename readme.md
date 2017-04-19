@@ -13,11 +13,13 @@ Try to match given german country name with its [ISO 3166-1](https://en.wikipedi
 ```javascript
 const match = require('match-country-german')
 
-let iso = match('Deutschland') // 'DE'
-	iso = match('Vereinigte Staaten von Amerika') // 'US'
-	iso = match('Großbrltannein') // null
-
+match('Deutschland') // 'DE'
+match('vereinigte staaten von amerika') // 'US'
+match('Großbritannin') // 'GB'
+match('Großbrltannein') // null
 ```
+
+For e.g. `Xambia`, there are two possible countries `Sambia` and `Gambia`. In this case, `match` will return `null`.
 
 ## Contributing
 
