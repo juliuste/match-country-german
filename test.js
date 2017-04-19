@@ -23,10 +23,19 @@ tape('exact matches', (t) => {
 	t.equal(match('England'), 'GB')
 })
 
+tape('fuzzy matches', (t) => {
+	t.plan(4)
+	t.equal(match('Großbritannin'), 'GB') // one typo
+	t.equal(match('Sxmbia'), 'ZM')
+	t.equal(match('Gxmbia'), 'GM')
+
+	// "Sambia" and "Gambia" both have a distance of 1 to "Xambia"
+	t.equal(match('Xambia'), null)
+})
+
 tape('invalid inputs', (t) => {
 	t.plan(3)
 	t.equal(match('Test'), null)
-	// t.equal(match('Großbritannein'), 'GB') // one typo
-	t.equal(match('Großbritannein'), null) // one typo
-	t.equal(match('Großbrltannein'), null) // two typos
+	t.equal(match('Großbritannein'), null) // one typo, distance of 2
+	t.equal(match('Großbrltannein'), null) // two typos, distance of 3
 })

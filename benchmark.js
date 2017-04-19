@@ -9,8 +9,8 @@ suite.add('exact match "Frankreich"', function () {
 	match('Frankreich')
 })
 
-suite.add('fuzzy match "Großbritannein"', function () {
-	match('Großbritannein')
+suite.add('fuzzy match "Großbritannin"', function () {
+	match('Großbritannin')
 })
 
 suite.add('too many typos "Großbrltannein"', function () {
