@@ -13,15 +13,20 @@ tape('countries.json has normalized keys', (t) => {
 	t.end()
 })
 
-tape('match-country-german', (t) => {
-	t.plan(8)
-	t.true(match('Deutschland')==='DE')
-	t.true(match('USA')==='US')
-	t.true(match('Vereinigte Staaten von Amerika')==='US')
-	t.true(match('Russland')==='RU')
-	t.true(match('Frankreich')==='FR')
-	t.true(match('Test')===null)
-	t.true(match('England')==='GB')
-	// t.true(match('Großbritannein')==='GB') // one typo
-	t.true(match('Großbrltannein')===null) // two typos
+tape('exact matches', (t) => {
+	t.plan(6)
+	t.equal(match('Deutschland'), 'DE')
+	t.equal(match('USA'), 'US')
+	t.equal(match('Vereinigte Staaten von Amerika'), 'US')
+	t.equal(match('Russland'), 'RU')
+	t.equal(match('Frankreich'), 'FR')
+	t.equal(match('England'), 'GB')
+})
+
+tape('invalid inputs', (t) => {
+	t.plan(3)
+	t.equal(match('Test'), null)
+	// t.equal(match('Großbritannein'), 'GB') // one typo
+	t.equal(match('Großbritannein'), null) // one typo
+	t.equal(match('Großbrltannein'), null) // two typos
 })
