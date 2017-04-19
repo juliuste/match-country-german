@@ -1,7 +1,7 @@
 'use strict'
 
 const tape = require('tape')
-const match = require('./index.js')
+const match = require('.')
 
 tape('match-country-german', (t) => {
 	t.plan(8)
@@ -12,5 +12,6 @@ tape('match-country-german', (t) => {
 	t.true(match('Frankreich')==='FR')
 	t.true(match('Test')===null)
 	t.true(match('England')==='GB')
-	t.true(match('Großbrltannein')===null)
+	// t.true(match('Großbritannein')==='GB') // one typo
+	t.true(match('Großbrltannein')===null) // two typos
 })
