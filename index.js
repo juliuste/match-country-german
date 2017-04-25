@@ -1,17 +1,26 @@
 'use strict'
 
 const countries = require('./countries.json')
-const slug = require('slug')
-const levenshtein = require('fast-levenshtein').get
+const normalize = require('normalize-for-search')
+const levenshtein = require('leven')
 
-const equals = (one, two) => (levenshtein(slug(one, ''), slug(two, '')) == 0) // levenshtein not necessary, a relict of an older version. used to tolerate distance 1, but since there is "gambia" vs "sambia" in german, this doesnt work out
+const matchCountry = (name) => {
+	if (countries[name]) return countries[name]
 
-const match = (name) => {
-	for(let country in countries){
-		if(equals(country, name)) return countries[country]
+	const normalized = normalize(name)
+	if (countries[normalized]) return countries[normalized]
+
+	let matches = 0
+	let match = null
+	for (let country in countries){
+		if (levenshtein(country, normalized) <= 1) {
+			if (matches > 0) return null
+			matches++
+			match = countries[country]
+		}
 	}
-	return null
+	return match
 }
 
 
-module.exports = match
+module.exports = matchCountry

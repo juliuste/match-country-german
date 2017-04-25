@@ -21,15 +21,17 @@
     "countries.json"
   ],
   "dependencies": {
-    "fast-levenshtein": "^2.0.5",
-    "slug": "^0.9.1"
+    "leven": "^2.1.0",
+    "normalize-for-search": "^2.0.1"
   },
   "devDependencies": {
+    "benchmark": "^2.1.4",
     "tape": "^4.6.3"
   },
   "scripts": {
     "test": "node test.js",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "benchmark": "node benchmark.js"
   },
   "engine": {
     "node": ">=4"
