@@ -1,5 +1,7 @@
 # match-country-german
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/match-country-german.svg)](https://greenkeeper.io/)
+
 Try to match given german country name with its [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) code.
 
 [![npm version](https://img.shields.io/npm/v/match-country-german.svg)](https://www.npmjs.com/package/match-country-german)
